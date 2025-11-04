@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../FraudGuard.Application/FraudGuard.Application.csproj" />
+  </ItemGroup>
+
 </Project>

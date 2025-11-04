@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../FraudGuad.Domain/FraudGuad.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
