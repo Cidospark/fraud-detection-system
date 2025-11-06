@@ -7,9 +7,11 @@ namespace FraudGuad.Domain.Enums
 {
     public enum CaseStatus
     {
-        Open,
-        Under_Investigation,
-        Closed,
-        Confirmed
+        opened,
+        under_investigation,
+        closed,
+        confirmed,
+        fraud,
+        false_positive
     }
 }

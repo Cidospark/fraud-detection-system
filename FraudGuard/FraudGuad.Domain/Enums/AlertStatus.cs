@@ -7,10 +7,9 @@ namespace FraudGuad.Domain.Enums
 {
     public enum AlertStatus
     {
-        New,
-        In_Review,
-        Escalated,
-        Resolve
-
+        pending,
+        in_review,
+        escalated,
+        resolve
     }
 }

@@ -15,5 +15,6 @@ namespace FraudGuad.Domain.Entities
         public string UpdatedAt { get; set; } = "";
 
         public ICollection<CaseAlerts> CaseAlerts { get; set; } = [];
+        public User? Investigator { get; set; }
     }
 }

@@ -7,8 +7,8 @@ namespace FraudGuad.Domain.Enums
 {
     public enum AlertSeverity
     {
-        High,
-        Medium,
-        Low
+        high,
+        medium,
+        low
     }
 }
