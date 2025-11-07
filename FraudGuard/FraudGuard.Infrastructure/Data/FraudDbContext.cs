@@ -21,5 +21,6 @@ namespace FraudGuard.Infrastructure.Data
         public DbSet<CaseAlerts> CaseAlerts { get; set; }
         public DbSet<Rule> Rules { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<TriggeredRules> TriggeredRules { get; set; }
     }
 }

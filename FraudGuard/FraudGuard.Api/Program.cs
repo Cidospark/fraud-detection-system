@@ -1,4 +1,5 @@
 using FraudGuard.Infrastructure;
+using FraudGuard.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,4 +26,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+using (var scope = app.Services.CreateScope())
+{
+    await Seeder.SeedMeAsync(scope.ServiceProvider);
+}
 app.Run();

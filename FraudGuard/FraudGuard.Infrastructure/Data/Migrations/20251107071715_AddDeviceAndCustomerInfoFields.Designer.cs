@@ -3,6 +3,7 @@ using System;
 using FraudGuard.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FraudGuard.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(FraudDbContext))]
-    partial class FraudDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251107071715_AddDeviceAndCustomerInfoFields")]
+    partial class AddDeviceAndCustomerInfoFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -229,27 +232,6 @@ namespace FraudGuard.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Transactions");
-                });
-
-            modelBuilder.Entity("FraudGuad.Domain.Entities.TriggeredRules", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("RuleId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("TransactionId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RuleId");
-
-                    b.HasIndex("TransactionId");
-
-                    b.ToTable("TriggeredRules");
                 });
 
             modelBuilder.Entity("FraudGuad.Domain.Entities.User", b =>
@@ -551,25 +533,6 @@ namespace FraudGuard.Infrastructure.Data.Migrations
                     b.Navigation("Alert");
 
                     b.Navigation("Case");
-                });
-
-            modelBuilder.Entity("FraudGuad.Domain.Entities.TriggeredRules", b =>
-                {
-                    b.HasOne("FraudGuad.Domain.Entities.Rule", "Rule")
-                        .WithMany()
-                        .HasForeignKey("RuleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FraudGuad.Domain.Entities.Transaction", "Transaction")
-                        .WithMany()
-                        .HasForeignKey("TransactionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Rule");
-
-                    b.Navigation("Transaction");
                 });
 
             modelBuilder.Entity("FraudGuard.Infrastructure.Identity.ApplicationUser", b =>
