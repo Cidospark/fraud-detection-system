@@ -9,7 +9,7 @@ namespace FraudGuad.Domain.Entities
     public class TriggeredRules
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         public Guid TransactionId { get; set; }
         public Guid RuleId { get; set; }

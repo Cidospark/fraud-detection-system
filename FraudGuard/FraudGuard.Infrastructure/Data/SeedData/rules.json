@@ -1,0 +1,47 @@
+[
+    {
+        "Id": "b7a9135f-8d6b-4d57-9b2f-13cf5f8a9c91",
+        "Name": "High Value Transaction",
+        "Field": "Amount",
+        "Condition": "Greater Than",
+        "Value": "500000",
+        "Severity": 2,
+        "CreatedAt": "2025-11-01T09:00:00Z"
+    },
+    {
+        "Id": "c8e15a9f-3b21-4ab5-bf8d-1b9de2446e33",
+        "Name": "Multiple Transactions",
+        "Field": "Time Window",
+        "Condition": "Count Greater Than",
+        "Value": "3 in 5 minutes",
+        "Severity": 3,
+        "CreatedAt": "2025-11-01T09:00:00Z"
+    },
+    {
+        "Id": "ed8efa8b-8d0b-4917-ab74-d8d52e0d4ba7",
+        "Name": "Transaction Status",
+        "Field": "Status",
+        "Condition": "Not Equal",
+        "Value": "Successful",
+        "Severity": 1,
+        "CreatedAt": "2025-11-01T09:00:00Z"
+    },
+    {
+        "Id": "e64a7cfb-92f9-46c1-b228-27cdb76d6f5e",
+        "Name": "Unusual Location",
+        "Field": "Location",
+        "Condition": "Not Equal",
+        "Value": "Nigeria",
+        "Severity": 3,
+        "CreatedAt": "2025-11-01T09:00:00Z"
+    },
+    {
+        "Id": "9be1c6f7-d993-457d-9b9e-944b9d511e35",
+        "Name": "International Transfer",
+        "Field": "Transfer Type",
+        "Condition": "Equals",
+        "Value": "international",
+        "Severity": 2,
+        "CreatedAt": "2025-11-01T09:00:00Z"
+    }
+]

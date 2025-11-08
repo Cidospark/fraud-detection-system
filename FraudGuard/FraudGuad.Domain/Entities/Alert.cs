@@ -9,13 +9,13 @@ namespace FraudGuad.Domain.Entities
     public class Alert
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; set; }= Guid.NewGuid();
         public Guid TransactionId { get; set; }
         public string Severity { get; set; } = "";
-        public string Status { get; set; } = "";
+        public string Status { get; set; } = "pending";
         public string RuleReason { get; set; } = "";
 
-        public string CreatedAt { get; set; } = "";
+        public string CreatedAt { get; set; } = DateTime.UtcNow.ToString();
 
         public Transaction? Transaction { get; set; }
 

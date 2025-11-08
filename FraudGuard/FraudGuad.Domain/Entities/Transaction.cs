@@ -7,7 +7,7 @@ namespace FraudGuad.Domain.Entities
 {
     public class Transaction
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; }= Guid.NewGuid();
         public string SenderAccountNumber { get; set; } = "";
         public string ReceiverAccountNumber { get; set; } = "";
         public string Customer { get; set; } = "";
@@ -22,7 +22,10 @@ namespace FraudGuad.Domain.Entities
         public decimal Amount { get; set; }
         public int RiskScore { get; set; }
         public string Description { get; set; } = "";
-        public string CreatedAt { get; set; } = "";
+        public string CreatedAt { get; set; } = DateTime.UtcNow.ToString();
+
+
+        public ICollection<TriggeredRules> TriggeredRules { get; set; } = [];
 
     }
 }

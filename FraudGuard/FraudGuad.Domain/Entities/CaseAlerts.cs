@@ -9,7 +9,7 @@ namespace FraudGuad.Domain.Entities
     public class CaseAlerts
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; set; }= Guid.NewGuid();
 
         public Guid CaseId { get; set; }
         public Guid AlertId { get; set; }

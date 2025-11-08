@@ -18,13 +18,13 @@ namespace FraudGuard.Infrastructure
             services.AddDbContext<FraudDbContext>(options =>
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
-            // services.AddIdentity<ApplicationUser, IdentityRole>(options =>
-            // {
-            //     options.Password.RequiredLength = 8;
-            //     options.Password.RequireNonAlphanumeric = false;
-            // })
-            // .AddEntityFrameworkStores<FraudDbContext>()
-            // .AddDefaultTokenProviders();
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 8;
+                options.Password.RequireNonAlphanumeric = false;
+            })
+            .AddEntityFrameworkStores<FraudDbContext>()
+            .AddDefaultTokenProviders();
 
             return services;
         }

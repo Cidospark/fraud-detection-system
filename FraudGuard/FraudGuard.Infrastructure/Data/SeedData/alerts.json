@@ -1,0 +1,51 @@
+[
+  {
+    "Id": "f34c6f1b-ef5e-40de-a1b7-01901d929f56",
+    "TransactionId": "cd41b7c1-dc9b-47fd-861a-79a9c2a3d3f5",
+    "Severity": "High",
+    "Status": "Pending",
+    "RuleReason": "High Value Transaction exceeded 500000"
+  },
+  {
+    "Id": "c3e46f2b-1a90-4a5f-9c31-8b3e9f6a3d3e",
+    "TransactionId": "79c98fa2-efb9-42b9-bb61-0e47e2e7f531",
+    "Severity": "Low",
+    "Status": "Resolved",
+    "RuleReason": "Frequent small transfers within short time frame"
+  },
+  {
+    "Id": "f7e0c97b-0b12-4a7d-9e39-0db3e4b6a0f5",
+    "TransactionId": "e72a0a8b-2c3c-4e56-b9a9-ff32e1f1a7de",
+    "Severity": "Medium",
+    "Status": "Pending",
+    "RuleReason": "Transaction amount slightly above threshold"
+  },
+  {
+    "Id": "dfb318e0-8f63-41b5-b8a8-0f342dfc2f94",
+    "TransactionId": "fa4d112f-0673-4c1e-955b-85f3d17a8c78",
+    "Severity": "Low",
+    "Status": "Resolved",
+    "RuleReason": "POS payment amount close to previous flagged amount"
+  },
+  {
+    "Id": "1b4c5d67-4f79-4a7e-8b22-8f6a5a2a4c8b",
+    "TransactionId": "9a1e3c85-b2e9-4c8f-a3ef-2db9a312c8b4",
+    "Severity": "Medium",
+    "Status": "Pending",
+    "RuleReason": "Multiple logins detected from different IPs"
+  },
+  {
+    "Id": "cc9b1e2d-86d9-4a7a-8122-6c9b21e7a2d2",
+    "TransactionId": "d42c0fa4-0d33-45d5-8475-7ecb5cc3b6cf",
+    "Severity": "High",
+    "Status": "Under Review",
+    "RuleReason": "Device not recognized for user profile"
+  },
+  {
+    "Id": "e11d3c4b-bc7b-4d92-b9c2-91e4dfc2b1a1",
+    "TransactionId": "a24ef8bb-1a5c-4dfb-93b5-07cc9e327e8b",
+    "Severity": "Critical",
+    "Status": "Pending",
+    "RuleReason": "Unusual Location Login detected"
+  }
+]

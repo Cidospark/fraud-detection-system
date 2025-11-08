@@ -9,10 +9,10 @@ namespace FraudGuad.Domain.Entities
     public class Notification
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; set; }= Guid.NewGuid();
         public bool IsSent { get; set; }
         public bool IsRead { get; set; }
         public string Text { get; set; } = "";
-        public string CreatedAt { get; set; } = "";
+        public string CreatedAt { get; set; } = DateTime.UtcNow.ToString();
     }
 }

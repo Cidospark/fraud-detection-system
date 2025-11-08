@@ -1,0 +1,22 @@
+[
+    {
+        "Id":"4db60ce9-766b-4646-82f6-ba5cded62006",
+        "Title":"High Value Transactions",
+        "Description":"Transactions that exceed the threshold of 500, 000",
+        "InvestigatorId":"fa2e91cb-65b4-46f9-9a35-3d1ed98d9e43",
+        "CreatedAt": "2025-11-06T14:10:00Z",
+        "UpdateAt": "2025-11-06T14:10:00Z",
+        "CaseAlerts":[
+            {
+                "Id":"92ef79b2-a3d9-41db-813c-1ee63c0d4064",
+                "CaseId":"4db60ce9-766b-4646-82f6-ba5cded62006",
+                "AlertId":"f34c6f1b-ef5e-40de-a1b7-01901d929f56"
+            },
+             {
+                "Id":"f9e529d1-3d32-4037-8877-764d96bba7bf",
+                "CaseId":"4db60ce9-766b-4646-82f6-ba5cded62006",
+                "AlertId":"f7e0c97b-0b12-4a7d-9e39-0db3e4b6a0f5"
+            }
+        ]
+    }
+]
