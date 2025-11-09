@@ -53,22 +53,22 @@ namespace FraudGuard.Application.Services.Rule
                 #region todo: I will refactor this code later to use the strategy pattern
                 foreach (var rule in rules)
                 {
-                    switch (rule.Field.ToLower())
+                    if (rule.Field.Equals("amount", StringComparison.CurrentCultureIgnoreCase) && rule.Condition.Equals("greater than", StringComparison.CurrentCultureIgnoreCase))
                     {
-                        case "amount":
-                            if (transaction.Amount > Convert.ToInt32(rule.Value) && rule.Condition.Equals("greater than", StringComparison.CurrentCultureIgnoreCase))
-                                await TriggerAction(transaction, rule, result);
-                            break;
+                        if (transaction.Amount > Convert.ToInt32(rule.Value))
+                            await TriggerAction(transaction, rule, result);
+                    }
 
-                        case "location":
-                            if (transaction.Location != rule.Value && !rule.Condition.Equals("not equal", StringComparison.CurrentCultureIgnoreCase))
-                                await TriggerAction(transaction, rule, result);
-                            break;
+                    if (rule.Field.Equals("location", StringComparison.CurrentCultureIgnoreCase) && rule.Condition.Equals("not equal", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        if (transaction.Location != rule.Value)
+                            await TriggerAction(transaction, rule, result);
+                    }
 
-                        case "status":
-                            if (transaction.Location != rule.Value && !rule.Condition.Equals("not equal", StringComparison.CurrentCultureIgnoreCase))
-                                await TriggerAction(transaction, rule, result);
-                            break;
+                    if (rule.Field.Equals("status", StringComparison.CurrentCultureIgnoreCase) && rule.Condition.Equals("not equal", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        if (transaction.Location != rule.Value)
+                            await TriggerAction(transaction, rule, result);
                     }
                 }
                 #endregion
