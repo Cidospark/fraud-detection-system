@@ -46,11 +46,12 @@ namespace FraudGuard.Infrastructure.Data
                     {
                         foreach (var (user, index) in users.Select((value, i) => (value, i)))
                         {
-                            user.UserName = user.Email;
                             var applicationUser = new ApplicationUser
                             {
                                 FirstName = user.FirstName,
                                 LastName = user.LastName,
+                                Email = user.Email,
+                                UserName = user.UserName,
                                 PhotoUrl = user.PhotoUrl,
                                 UserId = user.Id,
                                 User = user
@@ -97,10 +98,10 @@ namespace FraudGuard.Infrastructure.Data
                     await context.SaveChangesAsync();
                 }
 
-                if (!context.Rules.Any())
+                if (!context.Transactions.Any())
                 {
                     var transactionsData = await File.ReadAllTextAsync("../FraudGuard.Infrastructure/Data/SeedData/transactions.json");
-                    var transactions = JsonConvert.DeserializeObject<List<Rule>>(transactionsData);
+                    var transactions = JsonConvert.DeserializeObject<List<Transaction>>(transactionsData);
                     if (transactions != null && transactions.Any())
                     {
                         await context.AddRangeAsync(transactions);
@@ -112,7 +113,7 @@ namespace FraudGuard.Infrastructure.Data
                 if (!context.Alerts.Any())
                 {
                     var alertsData = await File.ReadAllTextAsync("../FraudGuard.Infrastructure/Data/SeedData/alerts.json");
-                    var alerts = JsonConvert.DeserializeObject<List<Rule>>(alertsData);
+                    var alerts = JsonConvert.DeserializeObject<List<Alert>>(alertsData);
                     if (alerts != null && alerts.Any())
                     {
                         await context.AddRangeAsync(alerts);
@@ -124,7 +125,7 @@ namespace FraudGuard.Infrastructure.Data
                 if (!context.Cases.Any())
                 {
                     var casesData = await File.ReadAllTextAsync("../FraudGuard.Infrastructure/Data/SeedData/cases.json");
-                    var cases = JsonConvert.DeserializeObject<List<Rule>>(casesData);
+                    var cases = JsonConvert.DeserializeObject<List<Case>>(casesData);
                     if (cases != null && cases.Any())
                     {
                         await context.AddRangeAsync(cases);
